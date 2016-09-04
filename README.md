@@ -1,2 +1,2 @@
-# version-updater
+# Version Updater
 Version updater for you software

@@ -1,0 +1,216 @@
+<md-toolbar class="md-table-toolbar md-default">
+  <div class="md-toolbar-tools">
+    <span>Version Managment</span>
+    <div flex></div>
+    <md-button class="md-raised md-default" layout="row" ng-click="addVersion($event)" >Add new version</md-button>
+  </div>
+</md-toolbar>
+
+<!-- exact table from live demo -->
+<md-table-container>
+  <table md-table>
+    <thead md-head>
+      <tr md-row>
+        <th md-column flex>Name</th>
+        <th md-column flex>Channel</th>
+        <th md-column md-numeric flex>Asset Count</th>
+        <th md-column flex>Date</th>
+        <th md-column flex></th>
+      </tr>
+    </thead>
+    <tbody md-body>
+      <tr md-row ng-repeat="version in a_versions | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+        <td md-cell>//version.name//</td>
+        <td md-cell>//version.channel//</td>
+        <td md-cell>//version.asset//</td>
+        <td md-cell>//version.date//</td>
+        <td md-cell layout="row"  layout-align="center center">
+          <md-button class="md-raised md-version-updater" ng-click="addAsset($event, version)">More</md-button>
+          <md-button class="md-accent" ng-click="deleteVersion($event, version)">Delete</md-button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</md-table-container>
+<div flex></div>
+<md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="//a_versionsLength//" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>
+
+<script type="text/ng-template" id="dialog1.tmpl.html">
+  <md-dialog aria-label="Create Version">
+    <form ng-cloak>
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <h2>Add a New Version</h2>
+        </div>
+      </md-toolbar>
+
+      <md-dialog-content class="md-no-momentum">
+        <div class="md-dialog-content">
+          <md-input-container class="md-icon-float md-block">
+            <label>Version Name</label>
+            <md-icon class="material-icons">looks_one</md-icon>
+            <input ng-model="version.name" type="text" required>
+          </md-input-container>
+          <md-input-container class="md-block">
+            <label>Change Notes</label>
+            <md-icon class="material-icons">edit</md-icon>
+            <textarea ng-model="version.notes" md-maxlength="150" rows="3" md-select-on-focus></textarea>
+          </md-input-container>
+          <md-input-container class="md-icon-float md-block">
+            <label>Channel</label>
+            <md-icon class="material-icons">devices_other</md-icon>
+            <md-select name="type" ng-model="version.channel" required>
+              <md-option value="dev">dev</md-option>
+              <md-option value="beta">beta</md-option>
+              <md-option value="stable">stable</md-option>
+            </md-select>
+          </md-input-container>
+        </div>
+      </md-dialog-content>
+
+      <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button class="md-raised md-primary" ng-click="answer('not useful')">
+         Add Version
+        </md-button>
+        <md-button class="md-raised md-default" ng-click="cancel()">
+          Cancel
+        </md-button>
+      </md-dialog-actions>
+    </form>
+  </md-dialog>
+</script>
+
+<script type="text/ng-template" id="addAsset.tmpl.html">
+  <md-dialog aria-label="Create Version">
+    <form ng-cloak>
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <h2>//version.name//</h2>
+        </div>
+      </md-toolbar>
+
+      <md-dialog-content class="md-no-momentum">
+        <div class="md-dialog-content">
+          <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex" md-autoselect>
+            <md-tab label="Version Data" id="tab1">
+              <md-input-container class="md-icon-float md-block">
+                <label>Version Name</label>
+                <md-icon class="material-icons">looks_one</md-icon>
+                <input ng-model="version.name" type="text" required>
+              </md-input-container>
+              <md-input-container class="md-block">
+                <label>Change Notes</label>
+                <md-icon class="material-icons">edit</md-icon>
+                <textarea ng-model="version.notes" md-maxlength="150" rows="2" md-select-on-focus></textarea>
+              </md-input-container>
+              <md-input-container class="md-icon-float md-block">
+                <label>Channel</label>
+                <md-icon class="material-icons">devices_other</md-icon>
+                <md-select name="type" ng-model="version.channel" required>
+                  <md-option value="dev">dev</md-option>
+                  <md-option value="beta">beta</md-option>
+                  <md-option value="stable">stable</md-option>
+                </md-select>
+              </md-input-container>
+            </md-tab>
+            <md-tab label="Version Assets">
+              <md-table-container>
+                <table md-table>
+                  <thead md-head>
+                    <tr md-row>
+                      <th md-column flex>Name</th>
+                      <th md-column flex>Plataform</th>
+                      <th md-column md-numeric flex>Downloads</th>
+                      <th md-column flex></th>
+                    </tr>
+                  </thead>
+                  <tbody md-body>
+                    <tr md-row ng-repeat="version in version.asset_data">
+                      <td md-cell>//version.name//</td>
+                      <td md-cell>//version.plataform//</td>
+                      <td md-cell>//version.downloads//</td>
+                      <td md-cell layout="row"  layout-align="center center">
+                        <md-button class="md-raised md-version-updater" ng-click="addAsset($event, version)">More</md-button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </md-table-container>
+              <div layout="row">
+                <md-button class="md-raised md-version-updater" ng-click="addAssetFile($event)">Add Asset</md-button>
+              </div>
+            </md-tab>
+          </md-tabs>
+        </div>
+      </md-dialog-content>
+
+      <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button class="md-raised md-primary" ng-click="answer('not useful')" ng-disabled="selectedIndex == 1">
+         Edit
+        </md-button>
+        <md-button class="md-raised md-default" ng-click="cancel()">
+          Cancel
+        </md-button>
+      </md-dialog-actions>
+    </form>
+  </md-dialog>
+</script>
+
+<script type="text/ng-template" id="addAsset2.tmpl.html">
+  <md-dialog aria-label="Add Asset to">
+    <form ng-cloak>
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <h2>Add an asset to //version.name//</h2>
+        </div>
+      </md-toolbar>
+
+      <md-dialog-content class="md-no-momentum">
+        <div class="md-dialog-content">
+          <form name="myForm">
+            <md-input-container class="md-icon-float md-block">
+              <label>Version Name</label>
+              <md-icon class="material-icons">looks_one</md-icon>
+              <input ng-model="version.name" type="text" disabled value="Auto-populated with filename">
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block">
+              <label>Plataform</label>
+              <md-icon class="material-icons">devices_other</md-icon>
+              <md-select name="type" ng-model="version.channel" required>
+                <md-option value="windows_64">Windows 64 bit</md-option>
+                <md-option value="windows_32">Windows 32 bit</md-option>
+                <md-option value="osx_64">OS X 64 bit</md-option>
+                <md-option value="linux_64">Linux 64 bit</md-option>
+                <md-option value="linux_32">Linux 32 bit</md-option>
+              </md-select>
+            </md-input-container>
+            <choose-file layout="row" flex>
+              <input id="fileInput" type="file" class="ng-hide" ng-model="version.file" required ariaLabel>
+              <md-input-container flex class="md-block">
+                <input type="text" ng-model="fileName" disabled>
+                <div class="hint">Select your file</div>
+              </md-input-container>
+              <div>
+                <md-button id="uploadButton" class="md-fab md-mini">
+                <md-icon class="material-icons">attach_file</md-icon>
+                </md-button>
+              </div>
+            </choose-file>
+          </form>
+        </div>
+      </md-dialog-content>
+
+      <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button class="md-raised md-primary" ng-click="upload()" ng-disable="myForm.$invalid">
+         Upload File
+        </md-button>
+        <md-button class="md-raised md-default" ng-click="cancel()">
+          Cancel
+        </md-button>
+      </md-dialog-actions>
+    </form>
+  </md-dialog>
+</script>

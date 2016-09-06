@@ -1,0 +1,41 @@
+body {
+  background: #e2e0e0; }
+
+.top-toolbar {
+  background-color: #2196f3 !important;
+  color: white !important; }
+
+md-toolbar {
+  background-color: #e2e0e0 !important; }
+
+md-toolbar h1 {
+  font-weight: normal; }
+
+md-content {
+  background-color: #e2e0e0; }
+
+td, th {
+  text-align: center !important; }
+
+.textHeight {
+  height: 25px; }
+
+.hint {
+  position: absolute;
+  left: 5px;
+  right: auto;
+  bottom: 0px;
+  font-size: 14px;
+  line-height: 14px;
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+  color: grey; }
+
+md-dialog {
+  width: 30%; }
+  md-dialog form md-toolbar {
+    background-color: #2196f3 !important; }
+
+footer {
+  color: black;
+  margin-left: 10px;
+  background-color: #e2e0e0; }

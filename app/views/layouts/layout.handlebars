@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Version Updater</title>
+	<link rel="stylesheet" type="text/css" href="/css/angular-material.min.css">
+	<script src="/js/main.min.js" type="text/javascript" charset="utf-8" async defer></script>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link href="/css/md-data-table.min.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body ng-app="versionUpdater" ng-cloak layout="column">
+
+	<div layout="column" layout-fill>
+		<md-toolbar class="top-toolbar" layout="row">
+			<h1 class="md-toolbar-tools" layout-align="left center">Version Upater Dashboard</h1>
+		</md-toolbar>
+    <md-content layout="column" class="content-wrapper md-padding" flex ng-controller="tableController">
+      {{{body}}}
+    </md-content>
+		<footer>
+			&copy; 2016 Sepulvju
+		</footer>
+  </div>
+
+		<!-- Angular Material requires Angular.js Libraries -->
+	<script src="/js/angular.min.js"></script>
+	<script src="/js/angular-animate.min.js"></script>
+	<script src="/js/angular-aria.min.js"></script>
+	<script src="/js/angular-messages.min.js"></script>
+	<script src="/js/md-data-table.min.js"></script>
+
+	<!-- Angular Material Library -->
+	<script src="/js/angular-material.min.js"></script>
+
+	<!-- Angular routes Library -->
+	<script src="/js/angular-ui-router.min.js"></script>
+
+	<script src="/js/versionUpdater-module.min.js"></script>
+	<script src="/js/tableController.min.js"></script>
+</body>
+</html>

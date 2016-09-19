@@ -1,0 +1,46 @@
+.index {
+  background-color: #34506d; }
+  .index md-content {
+    background-color: transparent; }
+    .index md-content md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+      border-color: white; }
+    .index md-content md-input-container:not(.md-input-invalid).md-input-focused label {
+      color: white; }
+    .index md-content md-input-container:not(.md-input-invalid).md-input-focused md-icon {
+      color: white; }
+    .index md-content md-input-container:not(.md-input-invalid) .md-input {
+      border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.5); }
+    .index md-content md-input-container:not(.md-input-invalid) label {
+      color: rgba(255, 255, 255, 0.5); }
+    .index md-content md-input-container:not(.md-input-invalid) md-icon {
+      color: rgba(255, 255, 255, 0.5); }
+    .index md-content md-input-container > md-icon {
+      color: rgba(255, 255, 255, 0.5); }
+    .index md-content md-input-container .md-button {
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 100px;
+      color: rgba(255, 255, 255, 0.5); }
+    .index md-content md-input-container .md-button .md-ripple-container {
+      border-radius: 100px;
+      color: white; }
+    .index md-content md-input-container:not(.md-input-invalid) label:not(.md-container-ignore).md-required:after {
+      color: rgba(255, 255, 255, 0.5); }
+    .index md-content md-input-container md-checkbox:not(.md-checked) {
+      color: rgba(255, 255, 255, 0.5); }
+    .index md-content md-input-container md-checkbox.md-checked {
+      color: white; }
+    .index md-content md-input-container md-checkbox.md-default-theme:not(.md-checked) .md-icon, .index md-content md-checkbox:not(.md-checked) .md-icon {
+      border-color: rgba(255, 255, 255, 0.5); }
+    .index md-content md-input-container md-checkbox.md-default-theme.md-checked .md-icon, .index md-content md-checkbox.md-checked .md-icon {
+      background-color: white; }
+    .index md-content md-input-container md-checkbox.md-default-theme.md-checked .md-icon:after, .index md-content md-checkbox.md-checked .md-icon:after {
+      border-color: black; }
+  .index .md-content._md.layout-column {
+    background-color: transparent; }
+
+.err-register {
+  background-color: rgba(255, 0, 0, 0.5);
+  color: white;
+  font-size: 1em;
+  text-align: center; }

@@ -1,0 +1,49 @@
+<md-content layout="column" class="content-wrapper md-padding index" flex>
+  <div layout="row" layout-align="center center" layout-fill>
+  	<md-content layout="column" flex=40>
+      <form layout="column" flex method="post" action="/application/register" >
+        <md-input-container class="md-icon-float md-block">
+          <label>Username</label>
+          <md-icon class="material-icons">account_box</md-icon>
+          <input ng-model="login.username" name="username" type="text" required>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block">
+          <label>Mail</label>
+          <md-icon class="material-icons">mail_outline</md-icon>
+          <input ng-model="login.mail" name="mail" type="email" required>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block">
+          <label>Fist Name</label>
+          <md-icon class="material-icons">label</md-icon>
+          <input ng-model="login.fistname" name="firstname" type="text" required>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block">
+          <label>Last Name</label>
+          <md-icon class="material-icons">label</md-icon>
+          <input ng-model="login.lastname" name="lastname" type="text" required>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block">
+          <label>Passowrd</label>
+          <md-icon class="material-icons">vpn_key</md-icon>
+          <input ng-model="login.password" name="password" type="password" required>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block">
+          <label>Confirm Passowrd</label>
+          <md-icon class="material-icons">vpn_key</md-icon>
+          <input ng-model="login.password2" name="password2" type="password" required>
+        </md-input-container>
+    		<md-input-container layout-align="center center">
+    			<div layout="row" layout-sm="column" layout-margin>
+    				<md-button class="md-flat" flex="100" flex-sm="100" type="submit">Register</md-button>
+    			</div>
+    		</md-input-container>
+      </form>
+  	</md-content>
+  </div>
+</div>
+
+{{#if errors}}
+  {{#each errors}}
+    <show-toast-error ng-show="false">{{msg}}</show-toast-error>
+  {{/each}}
+{{/if}}

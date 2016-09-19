@@ -1,0 +1,30 @@
+<md-content layout="column" class="content-wrapper md-padding index" flex ng-controller="loginController">
+  <div layout="row" layout-align="center center" layout-fill>
+  	<md-content layout="column" flex=40>
+      <form layout="column" flex method="post" action="/application/login" >
+        <md-input-container class="md-icon-float md-block">
+          <label>Username</label>
+          <md-icon class="material-icons">account_box</md-icon>
+          <input ng-model="login.username" name="username" type="text" required>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block">
+          <label>Passowrd</label>
+          <md-icon class="material-icons">vpn_key</md-icon>
+          <input ng-model="login.password" name="password" type="password" required>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block arya-marginloginform">
+          <md-checkbox md-no-ink aria-label="Remember me" ng-model="login.remember" name="remember" ng-click="isRemember()">
+            Remember me
+            <input type="hidden" name="remember" ng-model="remember.is" ng-value="remember.is">
+          </md-checkbox>
+        </md-input-container>
+    		<md-input-container layout-align="center center">
+    			<div layout="row" layout-sm="column" layout-margin>
+    				<md-button class="md-flat" flex="50" flex-sm="100" type="submit">Login</md-button>
+    				<md-button class="md-flat" flex="50" flex-sm="100" href="/application/register">Register</md-button>
+    			</div>
+    		</md-input-container>
+      </form>
+  	</md-content>
+  </div>
+</div>

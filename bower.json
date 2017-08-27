@@ -1,0 +1,31 @@
+{
+  "name": "version-updater",
+  "description": "Software auto updater, (will be compatible with squirell autoupdate)",
+  "main": "app.js",
+  "authors": [
+    "sepulvju <me@jplabs.xyz>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "autoupdate",
+    "software",
+    "version"
+  ],
+  "homepage": "https://github.com/sepulvju/version-updater",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-material": "^1.1.0",
+    "angular-messages": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
+    "angular-material-data-table": "^0.10.9",
+    "angular-toastr": "^2.1.1"
+  }
+}

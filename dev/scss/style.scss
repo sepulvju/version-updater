@@ -1,0 +1,54 @@
+$headerSize: 50px;
+$imagefullPath: '../imgs/';
+$pageFontColor: black;
+$pageHeaderColor: rgb(33,150,243);;
+$pageBodyColor: #e2e0e0;
+
+
+.top-toolbar{
+    background-color: $pageHeaderColor !important;
+    color: white !important;
+}
+
+md-toolbar{
+  background-color: $pageBodyColor !important;
+}
+
+md-toolbar h1 {
+  font-weight: normal;
+}
+
+
+td, th{
+  text-align: center !important;
+}
+
+.textHeight{
+	height: 25px;
+}
+
+.hint {
+  position: absolute;
+  left: 5px;
+  right: auto;
+  bottom: 0px;
+  font-size: 14px;
+  line-height: 14px;
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+  color: grey;
+}
+
+md-dialog{
+  width: 30%;
+  form{
+    md-toolbar{
+      background-color: $pageHeaderColor !important;
+    }
+  }
+}
+
+footer{
+  color: $pageFontColor;
+  margin-left: 10px;
+  background-color: $pageBodyColor;
+}

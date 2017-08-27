@@ -1,0 +1,49 @@
+{
+  "name": "version-updater",
+  "version": "0.0.1",
+  "description": "Software auto updater, (will be compatible with squirell autoupdate)",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sepulvju/version-updater.git"
+  },
+  "keywords": [
+    "autoupdate",
+    "software",
+    "version"
+  ],
+  "author": "sepulvju <me@jplabs.xyz>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sepulvju/version-updater/issues"
+  },
+  "homepage": "https://github.com/sepulvju/version-updater#readme",
+  "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "body-parser": "*",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "express": "*",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.14.1",
+    "express-validator": "^2.20.8",
+    "mongoose": "*",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.14.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-flatten": "^0.3.1",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0"
+  }
+}
